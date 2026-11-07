@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sollume – Không gian số an toàn cho sức khỏe tinh thần</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#24433F;--sage:#7FA394;--mist:#EAF1EE;--paper:#FAFBF9;--slate:#5C7C8A;--clay:#C98B6E;--clays:#F4E4DB;--ink:#1D2E2B;--mute:#5B6E6A;--line:#D9E3DF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px}
+h1,h2,h3{font-family:'Lora',Georgia,serif;font-weight:600;line-height:1.2;color:var(--deep)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:13px 28px;border-radius:14px;font-weight:600;background:var(--deep);color:#fff;transition:background .2s,transform .2s}
+.btn:hover{background:#18302d;transform:translateY(-2px)}
+.btn.o{background:none;color:var(--deep);box-shadow:inset 0 0 0 1.5px var(--deep)}
+.btn.o:hover{background:var(--mist)}
+
+/* Thanh hỗ trợ khẩn cấp */
+.crisis{background:var(--deep);color:#e6efec;font-size:14px;text-align:center;padding:8px 16px}
+.crisis a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* Nav */
+header{position:sticky;top:0;z-index:20;background:#fafbf9ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Lora',serif;font-weight:700;font-size:23px;color:var(--deep)}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500;color:var(--mute)}
+.nav ul a:hover{color:var(--deep)}
+.nav .btn{padding:9px 22px;font-size:15px}
+
+/* Hero */
+.hero{padding:76px 0 96px;background:radial-gradient(900px 500px at 85% 20%,var(--mist),transparent 70%)}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.tagl{display:inline-block;background:var(--mist);color:var(--deep);font-size:13.5px;font-weight:600;padding:6px 16px;border-radius:99px;margin-bottom:22px}
+.hero h1{font-size:clamp(36px,5vw,60px);letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.lead{margin:22px 0 32px;font-size:18.5px;color:var(--mute);max-width:500px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:var(--mute)}
+.trust span::before{content:"✓ ";color:var(--sage);font-weight:700}
+.scene{position:relative;height:460px}
+.blob{position:absolute;inset:20px 10px 20px 40px;background:linear-gradient(160deg,var(--sage),var(--slate));border-radius:46% 54% 42% 58%/52% 44% 56% 48%}
+.fc{position:absolute;background:#fff;border-radius:20px;padding:18px 20px;box-shadow:0 18px 40px #24433f26}
+.fc.a{top:36px;left:0;width:250px}
+.fc.b{top:210px;right:0;width:230px;background:var(--clays)}
+.fc.c{bottom:20px;left:46px;width:240px}
+.fc h3{font-family:'Be Vietnam Pro';font-size:14.5px;font-weight:600;margin-bottom:10px}
+.fc small{color:var(--mute);font-size:12.5px;display:block;line-height:1.5}
+.em{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.em span{background:var(--mist);border-radius:10px;text-align:center;padding:5px 0;font-size:18px}
+.em span.on{box-shadow:inset 0 0 0 2px var(--clay);background:#fff}
+.orb{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#fff,var(--sage));float:left;margin-right:12px;animation:br 6s ease-in-out infinite}
+@keyframes br{50%{transform:scale(1.3)}}
+.dot{display:inline-block;background:var(--deep);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px;margin-top:8px}
+
+/* Chung */
+section{padding:96px 0}
+.head{max-width:640px;margin-bottom:48px}
+.head.c{margin-inline:auto;text-align:center}
+.head h2{font-size:clamp(28px,3.8vw,42px)}
+.head p{margin-top:14px;color:var(--mute);font-size:17.5px}
+.rv{opacity:1}.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+
+/* Bạn đang gặp điều gì */
+.find{background:var(--mist)}
+.pills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pill{border:0;background:#fff;border-radius:18px;padding:20px 22px;text-align:left;cursor:pointer;font:inherit;font-weight:600;color:var(--deep);display:flex;justify-content:space-between;align-items:center;box-shadow:inset 0 0 0 1.5px transparent;transition:box-shadow .2s,transform .2s}
+.pill:hover{transform:translateY(-2px)}
+.pill[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--clay)}
+.pill::after{content:"→";color:var(--clay)}
+.panel{margin-top:22px;background:#fff;border-radius:22px;padding:28px 32px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.panel h3{font-size:22px;margin-bottom:6px}
+.panel p{color:var(--mute)}
+.panel ul{list-style:none;display:grid;gap:8px}
+.panel li{padding-left:26px;position:relative}
+.panel li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:12px;border-radius:50%;background:var(--sage)}
+
+/* 3 bước */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step{border-top:2px solid var(--deep);padding-top:22px}
+.step b{font-family:'Lora',serif;font-size:44px;color:var(--clay);line-height:1;display:block;margin-bottom:12px}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{color:var(--mute)}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.bc{background:var(--mist);border-radius:26px;padding:30px}
+.bc:nth-child(1){grid-column:span 4;background:var(--deep);color:#dfeae6}
+.bc:nth-child(1) h3{color:#fff}
+.bc:nth-child(2){grid-column:span 2;background:var(--clays)}
+.bc:nth-child(3){grid-column:span 2}
+.bc:nth-child(4){grid-column:span 2;background:#e3ebef}
+.bc:nth-child(5){grid-column:span 2;background:var(--clays)}
+.bc:nth-child(6){grid-column:span 6;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.bc h3{font-size:22px;margin-bottom:8px}
+.bc p{color:var(--mute);font-size:15.5px}
+.bc:nth-child(1) p{color:#b9cfc8}
+.seva{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.seva div{background:#ffffff14;border-radius:14px;padding:10px 14px;font-size:14px}
+.seva b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.ex{background:#fff;border-radius:20px;padding:20px;display:flex;gap:14px;align-items:center}
+.ex i{font-style:normal;width:52px;height:52px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-size:22px;flex:none}
+.ex small{color:var(--mute);display:block;font-size:13px}
+
+/* Riêng tư */
+.priv{background:var(--deep);color:#dfeae6}
+.priv h2{color:#fff}.priv .head p{color:#b9cfc8}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc{border:1px solid #ffffff26;border-radius:22px;padding:28px}
+.pc i{font-style:normal;font-size:28px}
+.pc h3{color:#fff;font-size:20px;margin:10px 0 6px}
+.pc p{color:#b9cfc8;font-size:15.5px}
+
+/* Hành trình */
+.jr{display:grid;grid-template-columns:repeat(6,1fr);list-style:none;counter-reset:j;gap:0}
+.jr li{counter-increment:j;position:relative;padding:58px 12px 0 0}
+.jr li::before{content:counter(j);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--sage);display:grid;place-items:center;font-family:'Lora',serif;font-weight:700;color:var(--deep);z-index:1}
+.jr li::after{content:"";position:absolute;top:20px;left:44px;right:0;height:2px;background:var(--line)}
+.jr li:last-child::after{display:none}
+.jr li:last-child::before{background:var(--clay);color:#fff;box-shadow:none}
+.jr b{display:block;font-size:16px}.jr span{font-size:14px;color:var(--mute);line-height:1.5;display:block;margin-top:4px}
+
+/* FAQ + CTA */
+.faq{max-width:740px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--deep)}
+summary::after{content:"+";color:var(--clay);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--mute)}
+.cta{padding:0 0 96px}
+.cta .box{background:linear-gradient(135deg,var(--sage),var(--slate));border-radius:34px;padding:72px 28px;text-align:center;color:#fff}
+.cta h2{color:#fff;font-size:clamp(28px,4.2vw,46px);max-width:700px;margin:0 auto 14px}
+.cta p{max-width:520px;margin:0 auto 30px;color:#eef5f2;font-size:17.5px}
+.cta .btn{background:#fff;color:var(--deep)}
+.cta .btn.o{background:none;color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mute);font-size:14.5px}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{max-width:520px}
+
+@media(max-width:900px){
+ .nav ul{display:none}
+ .hero .w,.panel,.bc:nth-child(6){grid-template-columns:1fr}
+ .scene{height:430px}
+ .pills,.steps,.pg{grid-template-columns:1fr}
+ .bento{grid-template-columns:1fr}
+ .bc:nth-child(n){grid-column:auto}
+ .jr{grid-template-columns:1fr;gap:24px}
+ .jr li{padding:0 0 0 60px;min-height:44px}.jr li::after{display:none}
+ section{padding:68px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="crisis">Cần hỗ trợ ngay lúc này? <a href="tel:115">Gọi cấp cứu 115</a> hoặc dùng nút <b>Hỗ trợ khẩn cấp</b> trong ứng dụng.</div>
+<header><div class="w nav">
+ <a href="#" class="brand"><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3c9 4 15 11 15 20 0 8-6 14-15 14S5 31 5 23C5 14 11 7 20 3z" fill="#5C7C8A"/><path d="M20 12c5 3 8 7 8 12 0 5-4 8-8 8s-8-3-8-8c0-5 3-9 8-12z" fill="#C98B6E"/><circle cx="20" cy="17" r="3.2" fill="#fff"/></svg>Sollume</a>
+ <nav><ul><li><a href="#gap">Bạn đang gặp gì?</a></li><li><a href="#cach">Cách hoạt động</a></li><li><a href="#tinh-nang">Tính năng</a></li><li><a href="#rieng-tu">Riêng tư</a></li><li><a href="#hoi-dap">Hỏi đáp</a></li></ul></nav>
+ <a href="#tai-ve" class="btn">Tải ứng dụng</a>
+</div></header>
+
+<section class="hero" style="padding-bottom:96px"><div class="w">
+ <div>
+  <span class="tagl">Không gian số an toàn cho tinh thần</span>
+  <h1>Chăm sóc tinh thần là một hành trình <em>tử tế</em>.</h1>
+  <p class="lead">Sollume giúp bạn hiểu cảm xúc của mình, kết nối với người cùng hoàn cảnh và gặp chuyên gia tâm lý khi cần. Bắt đầu từ một câu hỏi nhỏ mỗi ngày.</p>
+  <div class="acts"><a href="#tai-ve" class="btn">Bắt đầu miễn phí</a><a href="#cach" class="btn o">Xem cách hoạt động</a></div>
+  <div class="trust"><span>Ẩn danh khi chia sẻ</span><span>Nhật ký được mã hóa</span><span>Chuyên gia đã xác minh</span></div>
+ </div>
+ <div class="scene" aria-hidden="true">
+  <div class="blob"></div>
+  <div class="fc a"><h3>Hôm nay mình cảm thấy thế nào?</h3><div class="em"><span>😞</span><span>😕</span><span>😐</span><span class="on">🙂</span><span>😄</span></div></div>
+  <div class="fc b"><h3>Chuyên gia đã xác minh</h3><small>Lọc theo nhu cầu, đặt lịch và tư vấn.</small><span class="dot">✔ Hồ sơ xác minh</span></div>
+  <div class="fc c"><div class="orb"></div><h3 style="margin:0">Hít vào… thở ra</h3><small>Bài tập thở 2 phút</small></div>
+ </div>
+</div></section>
+
+<section class="find" id="gap"><div class="w">
+ <div class="head rv"><h2>Bạn đang gặp điều gì?</h2><p>Chọn hoàn cảnh gần với bạn nhất để xem Sollume đồng hành thế nào.</p></div>
+ <div class="pills rv" id="pills"></div>
+ <div class="panel rv" id="panel" aria-live="polite"></div>
+</div></section>
+
+<section id="cach"><div class="w">
+ <div class="head c rv"><h2>Từ những bước nhỏ nhất</h2><p>Ba giai đoạn, một hành trình liền mạch.</p></div>
+ <div class="steps rv">
+  <div class="step"><b>01</b><h3>Nhận biết</h3><p>Check-in mỗi ngày và làm bộ câu hỏi sàng lọc để gọi tên cảm xúc của mình.</p></div>
+  <div class="step"><b>02</b><h3>Thực hành</h3><p>Ghi nhật ký có cấu trúc, học kiến thức và luyện các bài tập thở, grounding, quản lý stress.</p></div>
+  <div class="step"><b>03</b><h3>Kết nối</h3><p>Chia sẻ với cộng đồng đồng cảm và gặp chuyên gia tâm lý khi bạn cần.</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0" id="tinh-nang"><div class="w">
+ <div class="head rv"><h2>Mọi công cụ trong một nơi</h2></div>
+ <div class="bento rv">
+  <div class="bc"><h3>Nhật ký cảm xúc có cấu trúc</h3><p>Nhận ra mô hình tâm lý và quy luật cảm xúc của chính bạn.</p>
+   <div class="seva"><div><b>Sự kiện</b>Chuyện gì đã xảy ra</div><div><b>Cảm xúc</b>Bạn cảm thấy gì</div><div><b>Suy nghĩ</b>Điều gì hiện trong đầu</div><div><b>Hành động</b>Bạn đã làm gì</div></div></div>
+  <div class="bc"><h3>Cộng đồng đồng cảm</h3><p>Kết nối người cùng hoàn cảnh. Có kiểm duyệt chặt chẽ.</p></div>
+  <div class="bc"><h3>Bài tập tự xoa dịu</h3><p>Thở, grounding, quản lý stress. Bộ công cụ bỏ túi cho lúc căng thẳng.</p></div>
+  <div class="bc"><h3>Tự đánh giá</h3><p>Bộ câu hỏi sàng lọc giúp bạn hiểu rõ hơn vấn đề mình gặp phải.</p></div>
+  <div class="bc"><h3>Hỗ trợ khẩn cấp</h3><p>Nút luôn sẵn sàng ở mọi màn hình khi bạn cần.</p></div>
+  <div class="bc"><div><h3>Gặp chuyên gia tâm lý uy tín</h3><p>Hồ sơ xác minh, lọc theo nhu cầu, đặt lịch và tư vấn ngay trong ứng dụng.</p></div>
+   <div class="ex"><i>A</i><div><b>ThS. Nguyễn Minh An</b><small>Nhà tâm lý lâm sàng · Lo âu, Burnout</small><small>✔ Đã xác minh</small></div></div></div>
+ </div>
+</div></section>
+
+<section class="priv" id="rieng-tu"><div class="w">
+ <div class="head c rv"><h2>Dữ liệu của bạn, quyền của bạn</h2><p>Dữ liệu tâm lý rất nhạy cảm, nên bảo mật là ưu tiên hàng đầu.</p></div>
+ <div class="pg rv">
+  <div class="pc"><i>🕶️</i><h3>Ẩn danh</h3><p>Bạn toàn quyền ẩn danh khi chia sẻ.</p></div>
+  <div class="pc"><i>🔐</i><h3>Mã hóa</h3><p>Nhật ký cá nhân được mã hóa, chỉ bạn đọc được.</p></div>
+  <div class="pc"><i>🗑️</i><h3>Xóa khi cần</h3><p>Bạn chủ động xóa dữ liệu bất cứ lúc nào.</p></div>
+ </div>
+</div></section>
+
+<section><div class="w">
+ <div class="head rv"><h2>Mental Health Journey</h2><p>Bạn nhìn thấy tiến bộ của mình theo thời gian.</p></div>
+ <ol class="jr rv">
+  <li><b>Check-in</b><span>Mỗi ngày</span></li><li><b>Tự đánh giá</b><span>Hiểu mình</span></li><li><b>Học kiến thức</b><span>Hiểu vấn đề</span></li>
+  <li><b>Thực hành</b><span>Rèn kỹ năng</span></li><li><b>Cộng đồng</b><span>Không cô độc</span></li><li><b>Trị liệu</b><span>Cùng chuyên gia</span></li>
+ </ol>
+</div></section>
+
+<section style="padding-top:0" id="hoi-dap"><div class="w">
+ <div class="head c rv"><h2>Câu hỏi thường gặp</h2></div>
+ <div class="faq rv">
+  <details><summary>Sollume có thay thế điều trị không?</summary><p>Không. Sollume hỗ trợ bạn tự chăm sóc và kết nối chuyên gia, không thay thế chẩn đoán hay điều trị y tế.</p></details>
+  <details><summary>Thông tin của tôi có an toàn không?</summary><p>Bạn có thể ẩn danh, nhật ký được mã hóa và bạn xóa dữ liệu bất cứ lúc nào.</p></details>
+  <details><summary>Nếu tôi đang gặp khủng hoảng?</summary><p>Hãy dùng nút Hỗ trợ khẩn cấp trong ứng dụng, gọi 115 hoặc liên hệ người thân ngay.</p></details>
+ </div>
+</div></section>
+
+<section class="cta" id="tai-ve"><div class="w"><div class="box">
+ <h2>Hôm nay mình cảm thấy thế nào?</h2>
+ <p>Bắt đầu bằng một câu hỏi nhỏ. Sollume sẽ đồng hành cùng bạn.</p>
+ <div class="acts" style="justify-content:center"><a href="#" class="btn">App Store</a><a href="#" class="btn o">Google Play</a></div>
+</div></div></section>
+
+<footer><div class="w"><span><b style="font-family:'Lora',serif;font-size:19px;color:var(--deep)">Sollume</b><br>© 2026</span><p>Sollume không thay thế chẩn đoán hay điều trị y tế. Nếu bạn đang gặp nguy hiểm, hãy gọi 115 hoặc liên hệ người thân ngay.</p></div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+const D=[
+['Áp lực học tập','Ẩn danh trò chuyện với bạn cùng áp lực thi cử, điểm số.'],
+['Áp lực công việc','Nhận ra điều gì làm bạn kiệt sức trong công việc.'],
+['Lo âu','Làm bộ câu hỏi sàng lọc và luyện bài tập thở, grounding.'],
+['Burnout','Theo dõi cảm xúc theo thời gian và tìm lại nhịp nghỉ ngơi.'],
+['Cảm giác cô đơn','Thấy rằng mình không đơn độc qua cộng đồng đồng cảm.'],
+['Muốn hiểu mình hơn','Dùng nhật ký có cấu trúc để nhận ra quy luật cảm xúc.']];
+const P=document.getElementById('pills'),B=document.getElementById('panel');
+P.innerHTML=D.map((d,i)=>`<button class="pill" aria-pressed="false" data-i="${i}">${d[0]}</button>`).join('');
+function show(i){[...P.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+ B.innerHTML=`<div><h3>${D[i][0]}</h3><p>${D[i][1]}</p></div><ul><li>Check-in và nhật ký Sự kiện – Cảm xúc – Suy nghĩ – Hành động</li><li>Cộng đồng đúng nhóm hoàn cảnh, có kiểm duyệt</li><li>Chuyên gia xác minh khi bạn muốn đi sâu hơn</li></ul>`}
+P.onclick=e=>{const b=e.target.closest('.pill');if(b)show(+b.dataset.i)};show(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
